@@ -1,6 +1,6 @@
 dnl----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_WITH_EXT_LIB
+dnl   関数：MYAC_WITH_EXT_PKG
 dnl
 dnl   概要：オプション --with-XXX を作成する。
 dnl   引数：
@@ -22,7 +22,7 @@ dnl     -   myac_with_$2_enable
 dnl             ユーザーが指定した内容に従って、
 dnl             その結果が TRUE/FALSE で記録される。
 dnl
-AC_DEFUN([MYAC_WITH_EXT_LIB],[
+AC_DEFUN([MYAC_WITH_EXT_PKG],[
 AC_ARG_WITH([$2],
     AC_HELP_STRING([--with-]$2[=PATH], $3),
     [[myac_with_]m4_bpatsubst([$2],-,_)[_val=${withval}] ],
@@ -41,11 +41,11 @@ AM_CONDITIONAL(
     [$5],
     [[test  "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy"]]dnl
 )dnl
-])dnl   End of AC_DEFUN(MYAC_WITH_EXT_LIB)
+])dnl   End of AC_DEFUN(MYAC_WITH_EXT_PKG)
 dnl
 dnl----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_SET_EXT_LIB_OPTIONS
+dnl   関数：MYAC_SET_EXT_PKG_OPTIONS
 dnl
 dnl   概要：オプション --with-XXX を作成する。
 dnl   引数：
@@ -55,7 +55,7 @@ dnl     -  $3   ライブラリのディレクトリ名
 dnl     -  $4   ヘッダファイルのディレクトリ名
 dnl     -  $5   バイナリのディレクトリ名
 dnl
-AC_DEFUN([MYAC_SET_EXT_LIB_OPTIONS],[
+AC_DEFUN([MYAC_SET_EXT_PKG_OPTIONS],[
 AC_MSG_CHECKING([[for ]$1[ Options]])
 dnl
 [if test "X${myac_with_]m4_bpatsubst([$2],-,_)[_path}Y" != "XY" ; then]
@@ -78,5 +78,5 @@ AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
 AC_MSG_RESULT([$1[_CFLAGS  = ${]$1[_CFLAGS}]])
 AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
 AC_MSG_RESULT([$1[_LDFLAGS = ${]$1[_LDFLAGS}]])
-])dnl   End of AC_DEFUN(MYAC_SET_EXT_LIB_COMPILER_OPTION)
+])dnl   End of AC_DEFUN(MYAC_SET_EXT_PKG_COMPILER_OPTION)
 dnl
