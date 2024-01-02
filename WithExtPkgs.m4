@@ -73,10 +73,18 @@ dnl
   $1[_LDFLAGS='';]
   $1[_CFLAGS='';]
 [fi]
+dnl
 AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_val}])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
 AC_MSG_RESULT([$1[_CFLAGS  = ${]$1[_CFLAGS}]])
+dnl
 AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
 AC_MSG_RESULT([$1[_LDFLAGS = ${]$1[_LDFLAGS}]])
+dnl
+AC_SUBST($1[_LIBDIR])
+AC_SUBST($1[_INCDIR])
+AC_SUBST($1[_BINDIR])
+AC_SUBST($1[_LDFLAGS])
+AC_SUBST($1[_CFLAGS])
 ])dnl   End of AC_DEFUN(MYAC_SET_EXT_PKG_COMPILER_OPTION)
 dnl
