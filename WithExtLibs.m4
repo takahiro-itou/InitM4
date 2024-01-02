@@ -73,5 +73,10 @@ dnl
   $1[_LDFLAGS='';]
   $1[_CFLAGS='';]
 [fi]
+AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_val}])
+AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
+AC_MSG_RESULT([$1[_CFLAGS  = ${]$1[_CFLAGS}]])
+AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
+AC_MSG_RESULT([$1[_LDFLAGS = ${]$1[_LDFLAGS}]])
 ])dnl   End of AC_DEFUN(MYAC_SET_EXT_LIB_COMPILER_OPTION)
 dnl
