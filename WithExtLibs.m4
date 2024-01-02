@@ -43,3 +43,35 @@ AM_CONDITIONAL(
 )dnl
 ])dnl   End of AC_DEFUN(MYAC_WITH_EXT_LIB)
 dnl
+dnl----------------------------------------------------------------
+dnl
+dnl   関数：MYAC_SET_EXT_LIB_OPTIONS
+dnl
+dnl   概要：オプション --with-XXX を作成する。
+dnl   引数：
+dnl     -  $1   外部ライブラリの名前
+dnl     -  $2   オプション名
+dnl     -  $3   ライブラリのディレクトリ名
+dnl     -  $4   ヘッダファイルのディレクトリ名
+dnl     -  $5   バイナリのディレクトリ名
+dnl
+AC_DEFUN([MYAC_SET_EXT_LIB_OPTIONS],[
+AC_MSG_CHECKING([[for ]$1[ Options]])
+dnl
+[if test "X${myac_with_]m4_bpatsubst([$2],-,_)[_path}Y" != "XY" ; then]
+  $1[_LIBDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$3[";]
+  $1[_INCDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4[";]
+  $1[_BINDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5[";]
+  dnl
+  $1[_LDFLAGS=-L"${]$1[_LIBDIR}";]
+  $1[_CFLAGS=-I"${]$1[_INCDIR}";]
+[else]
+  $1[_LIBDIR='';]
+  $1[_INCDIR='';]
+  $1[_BINDIR='';]
+  dnl
+  $1[_LDFLAGS='';]
+  $1[_CFLAGS='';]
+[fi]
+])dnl   End of AC_DEFUN(MYAC_SET_EXT_LIB_COMPILER_OPTION)
+dnl
