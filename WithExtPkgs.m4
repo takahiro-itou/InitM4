@@ -58,12 +58,13 @@ dnl
 AC_DEFUN([MYAC_SET_EXT_PKG_OPTIONS],[
 AC_MSG_CHECKING([[for ]$1[ Options]])
 dnl
-[if test "X${myac_with_]m4_bpatsubst([$2],-,_)[_path}Y" != "XY" ; then]
+[if test  "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy" ; then]
+[if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_path}y" != "xy" ; then]
   $1[_LIBDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$3[";]
   $1[_INCDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4[";]
   $1[_BINDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5[";]
   dnl
-  $1[_CPPFLAGS=-I"${]$1[_INCDIR}";]
+  $1[_CPPFLAGS=-I"${]$1[_INCDIR}" -DHAVE_]$1[=1;]
   $1[_CFLAGS='';]
   $1[_CXXFLAGS='';]
   $1[_LDFLAGS=-L"${]$1[_LIBDIR}";]
@@ -72,7 +73,17 @@ dnl
   $1[_INCDIR='';]
   $1[_BINDIR='';]
   dnl
-  $1[_CPPFLAGS='';]
+  $1[_CPPFLAGS='-DHAVE_]$1[=1';]
+  $1[_CFLAGS='';]
+  $1[_CXXFLAGS='';]
+  $1[_LDFLAGS='';]
+[fi]
+[else]
+  $1[_LIBDIR='';]
+  $1[_INCDIR='';]
+  $1[_BINDIR='';]
+  dnl
+  $1[_CPPFLAGS='-DHAVE_]$1[=0';]
   $1[_CFLAGS='';]
   $1[_CXXFLAGS='';]
   $1[_LDFLAGS='';]
