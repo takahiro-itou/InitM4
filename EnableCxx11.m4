@@ -23,7 +23,7 @@ AC_MSG_CHECKING([Compiler Accepts c++11])
     [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_CPLUSPLUS11}"]
 [elif test "x${myac_cf_gnuplusplus11_enabled}y" = "xTRUEy" ; then]
     [myac_cf_cplusplus11_enabled=TRUE]
-    [CXXFLAGS_ENABLE_CPLUSPLUS11="${CXXFLAGS_ENABLE_GNUPLUSPLUS14}"]
+    [CXXFLAGS_ENABLE_CPLUSPLUS11="${CXXFLAGS_ENABLE_GNUPLUSPLUS11}"]
     [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_CPLUSPLUS11}"]
 [elif test "x${myac_cf_cplusplus11_enabled}y" = "xTRUEy" ; then]
     [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_CPLUSPLUS11}"]
