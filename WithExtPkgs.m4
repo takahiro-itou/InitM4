@@ -65,7 +65,7 @@ dnl
   $1[_BINDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5[";]
   dnl
   $1[_CPPFLAGS=-I"${]$1[_INCDIR}";]
-  $1[_CPPFLAGS+=' -DHAVE_]$1[=1;]
+  $1[_CPPFLAGS+=' -DHAVE_]$1[=1';]
   $1[_CFLAGS='';]
   $1[_CXXFLAGS='';]
   $1[_LDFLAGS=-L"${]$1[_LIBDIR}";]
