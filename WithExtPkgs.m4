@@ -63,14 +63,16 @@ dnl
   $1[_INCDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4[";]
   $1[_BINDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5[";]
   dnl
-  $1[_CFLAGS=-I"${]$1[_INCDIR}";]
-  $1[_CXXFLAGS=-I"${]$1[_INCDIR}";]
+  $1[_CPPFLAGS=-I"${]$1[_INCDIR}";]
+  $1[_CFLAGS='';]
+  $1[_CXXFLAGS='';]
   $1[_LDFLAGS=-L"${]$1[_LIBDIR}";]
 [else]
   $1[_LIBDIR='';]
   $1[_INCDIR='';]
   $1[_BINDIR='';]
   dnl
+  $1[_CPPFLAGS='';]
   $1[_CFLAGS='';]
   $1[_CXXFLAGS='';]
   $1[_LDFLAGS='';]
@@ -80,6 +82,8 @@ AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_val}])
 AC_MSG_CHECKING([[for ]$1[ path]])
 AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_path}])
 dnl
+AC_MSG_CHECKING([[for ]$1[ PreProcessor Options]])
+AC_MSG_RESULT([$1[_CPPFLAGS = ${]$1[_CFLAGS}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
 AC_MSG_RESULT([$1[_CFLAGS   = ${]$1[_CFLAGS}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
@@ -91,6 +95,7 @@ dnl
 AC_SUBST($1[_LIBDIR])
 AC_SUBST($1[_INCDIR])
 AC_SUBST($1[_BINDIR])
+AC_SUBST($1[_CPPFLAGS])
 AC_SUBST($1[_CFLAGS])
 AC_SUBST($1[_CXXFLAGS])
 AC_SUBST($1[_LDFLAGS])
