@@ -19,19 +19,19 @@ MYAC_CHECK_EXTRA_COMPILER_OPTION(
 AC_MSG_CHECKING([Compiler Accepts c++11])
 [if test "x${myac_cf_gnuplusplus14_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
-    [CXXFLAGS_ENABLE_CPLUSPLUS11="${CXXFLAGS_ENABLE_GNUPLUSPLUS14}"]
+    [CXXFLAGS_ENABLE_STDCXX="${CXXFLAGS_ENABLE_GNUPLUSPLUS14}"]
 [elif test "x${myac_cf_gnuplusplus11_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
-    [CXXFLAGS_ENABLE_CPLUSPLUS11="${CXXFLAGS_ENABLE_GNUPLUSPLUS11}"]
+    [CXXFLAGS_ENABLE_STDCXX="${CXXFLAGS_ENABLE_GNUPLUSPLUS11}"]
 [elif test "x${myac_cf_cplusplus11_enabled}y" = "xTRUEy" ; then]
-    [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_CPLUSPLUS11}"]
+    [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_STDCXX}"]
 [elif test "x${myac_cf_cplusplus0x_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
-    [CXXFLAGS_ENABLE_CPLUSPLUS11="${CXXFLAGS_ENABLE_CPLUSPLUS0X}"]
+    [CXXFLAGS_ENABLE_STDCXX="${CXXFLAGS_ENABLE_CPLUSPLUS0X}"]
 [fi]
 [if test "x${myac_cf_stdcxx_enabled}y" = "xTRUEy" ; then]
-    [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_CPLUSPLUS11}"]
-    AC_MSG_RESULT([YES : ${CXXFLAGS_ENABLE_CPLUSPLUS11}])
+    [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_STDCXX}"]
+    AC_MSG_RESULT([YES : ${CXXFLAGS_ENABLE_STDCXX}])
 [else]
     AC_MSG_RESULT([NO])
 [fi]
