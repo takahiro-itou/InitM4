@@ -28,6 +28,8 @@ AC_MSG_CHECKING([Compiler Accepts c++11])
 [elif test "x${myac_cf_cplusplus0x_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
     [CXXFLAGS_ENABLE_STDCXX="${COMPILER_ACCEPTS_CXX0X}"]
+[else]
+    [myac_cf_stdcxx_enabled=FALSE]
 [fi]
 [if test "x${myac_cf_stdcxx_enabled}y" = "xTRUEy" ; then]
     [CXXFLAGS="${CXXFLAGS}  ${CXXFLAGS_ENABLE_STDCXX}"]
