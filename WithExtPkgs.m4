@@ -58,7 +58,7 @@ dnl
 AC_DEFUN([MYAC_SET_EXT_PKG_OPTIONS],[
 AC_MSG_CHECKING([[for ]$1[ Options]])
 dnl
-[if test  "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy" ; then]
+[if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy" ; then]
   [if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_path}y" != "xy" ; then]
     $1[_LIBDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$3["]
     $1[_INCDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4["]
