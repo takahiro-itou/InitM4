@@ -125,3 +125,25 @@ MYAC_SET_EXT_PKG_OPTIONS(
 | CPPUNIT_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | CPPUNIT_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | CPPUNIT_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${CPPUNIT_LIBDIR} |
+
+- 判定した結果は以下のように Makefiile.am で使うことができる
+
+```
+TEST_CPPFLAGS_XUNIT         =  @CPPUNIT_CPPFLAGS@
+TEST_CFLAGS_XUNIT           =  @CPPUNIT_CFLAGS@
+TEST_CXXFLAGS_XUNIT         =  @CPPUNIT_CXXFLAGS@
+TEST_LDFLAGS_XUNIT          =  @CPPUNIT_LDFLAGS@
+
+if  AMCNF_CPPUNIT_ENABLED
+TEST_LINK_LDADD_XUNIT       =  @CPPUNIT_LINK_LDADD@
+else
+TEST_LINK_LDADD_XUNIT       =
+endif
+
+...
+
+AM_CFLAGS           =  ${TEST_CFLAGS_XUNIT}
+AM_CXXFLAGS         =  ${TEST_CXXFLAGS_XUNIT}
+AM_LDFLAGS          =  ${TEST_LDFLAGS_XUNIT}
+LDADD               =  ${TEST_LINK_LDADD_XUNIT}
+```
