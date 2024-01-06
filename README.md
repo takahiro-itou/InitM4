@@ -61,6 +61,24 @@ m4_include([path_for_m4/CheckOverride.m4])
 変数 CXXFLAGS_ENABLE_STDCXX に設定され、
 さらに変数 CXXFLAGS の末尾に追記される。
 
+- 判定した結果は、例えば以下のように使うことができる。
+    - ただし @....@ の部分を置換させるため configure  に生成させる必要がある
+
+```Config.h.in
+//
+//    キーワード override の検査。
+//
+
+#if ( @CONFIG_CHECK_CXX_OVERRIDE_ENABLED@ )
+#    define     SAMPLE_ENABLE_OVERRIDE          1
+#else
+#    if !defined( override )
+#        define     override
+#    endif
+#    undef      SAMPLE_ENABLE_OVERRIDE
+#endif
+```
+
 ###   外部パッケージの追加
 
 - 以下のファイルをインクルードすると --with-XXX 系の
