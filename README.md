@@ -50,6 +50,13 @@ m4_include([path_for_m4/CheckOverride.m4])
 
 - EnableCxx11.m4 の判定結果
 
+| 検査順序 |         フラグ名         |   検査対象   |
+|---------:|:-------------------------|:-------------|
+|       1  | COMPILER_ACCEPTS_GNUXX14 | --std=gnu+14 |
+|       2  | COMPILER_ACCEPTS_GNUXX11 | --std=gnu+11 |
+|       3  | COMPILER_ACCEPTS_CXX11   | --std=c++11  |
+|       4  | COMPILER_ACCEPTS_CXX0X   | --std=c++0x  |
+
 
 ###   外部パッケージの追加
 
