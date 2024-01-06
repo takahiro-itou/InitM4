@@ -120,8 +120,8 @@ MYAC_SET_EXT_PKG_OPTIONS(
 | CPPUNIT_LIBDIR         | 空文字列 ("") | 空文字列 ("") | path/lib      |
 | CPPUNIT_INCDIR         | 空文字列 ("") | 空文字列 ("") | path/include  |
 | CPPUNIT_BINDIR         | 空文字列 ("") | 空文字列 ("") | path/bin      |
-| CPPUNIT_CPPFLAGS       | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1 |
-|                        |               |               | -I${CPPUNIT_INCDIR}    |
+| CPPUNIT_CPPFLAGS   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
+|                    |                  |                  | -I${CPPUNIT_INCDIR} |
 | CPPUNIT_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | CPPUNIT_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | CPPUNIT_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${CPPUNIT_LIBDIR} |
