@@ -88,14 +88,14 @@ MYAC_SET_EXT_PKG_OPTIONS(
 
 |         変数名         |
 |:-----------------------|
-| AMCNF_<TITLE>_ENABLED  |
-| <TITLE>_LIBDIR         |
-| <TITLE>_INCDIR         |
-| <TITLE>_BINDIR         |
-| <TITLE>_CPPFLAGS       |
-| <TITLE>_CFLAGS         |
-| <TITLE>_CXXFLAGS       |
-| <TITLE>_LDFLAGS        |
+| AMCNF_[TITLE]_ENABLED  |
+| [TITLE]_LIBDIR         |
+| [TITLE]_INCDIR         |
+| [TITLE]_BINDIR         |
+| [TITLE]_CPPFLAGS       |
+| [TITLE]_CFLAGS         |
+| [TITLE]_CXXFLAGS       |
+| [TITLE]_LDFLAGS        |
 
 例えば上記の CppUnit.m4 では
 
