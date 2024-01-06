@@ -41,6 +41,16 @@ m4_include([path_for_m4/CheckNullPtr.m4])
 m4_include([path_for_m4/CheckOverride.m4])
 ```
 
+|     ファイル名     |          設定されるフラグ          |  検査対象  |
+|:-------------------|:-----------------------------------|:-----------|
+| EnableCxx11.m4     | CXXFLAGS_ENABLE_STDCXX, CXXFLAGS   | 下記参照   |
+| CheckConstExpr.m4  | CONFIG_CHECK_CXX_CONSTEXPR_ENABLED | constexpr  |
+| CheckNullPtr.m4    | CONFIG_CHECK_CXX_NULLPTR_ENABLED   | nullptr    |
+| CheckOverride.m4   | CONFIG_CHECK_CXX_OVERRIDE_ENABLED  | override   |
+
+- EnableCxx11.m4 の判定結果
+
+
 ###   外部パッケージの追加
 
 ```
