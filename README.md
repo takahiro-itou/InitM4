@@ -63,8 +63,50 @@ m4_include([path_for_m4/CheckOverride.m4])
 
 ###   外部パッケージの追加
 
+- 以下のファイルをインクルードすると --with-XXX 系の
+  オプションが configure スクリプトに追加される。
+
 ```
 m4_include([path_for_m4/WithExtPkgs.m4])
 
 m4_include([path_for_m4/Packages/CppUnit.m4])
 ```
+
+この WithExtPkgs.m4 をインクルードし
+
+```
+MYAC_WITH_EXT_PKG(
+    [TITLE],  [name],  [help message],  [default],
+    [AMCNF_TITLE_ENABLED],
+)
+MYAC_SET_EXT_PKG_OPTIONS(
+    [TITLE], [name], [lib], [include], [bin],dnl
+)
+```
+のように使う。するとユーザーが --with-name オプションを指定すると
+以下の変数が設定される。
+
+|         変数名         |
+|:-----------------------|
+| AMCNF_<TITLE>_ENABLED  |
+| <TITLE>_LIBDIR         |
+| <TITLE>_INCDIR         |
+| <TITLE>_BINDIR         |
+| <TITLE>_CPPFLAGS       |
+| <TITLE>_CFLAGS         |
+| <TITLE>_CXXFLAGS       |
+| <TITLE>_LDFLAGS        |
+
+例えば上記の CppUnit.m4 では
+
+```
+MYAC_WITH_EXT_PKG(
+    [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
+    [AMCNF_CPPUNIT_ENABLED],dnl
+)
+MYAC_SET_EXT_PKG_OPTIONS(
+    [CPPUNIT], [cppunit], [lib], [include], [bin],dnl
+)
+```
+
+となっている。
