@@ -57,6 +57,9 @@ m4_include([path_for_m4/CheckOverride.m4])
 |       3  | COMPILER_ACCEPTS_CXX11   | --std=c++11  |
 |       4  | COMPILER_ACCEPTS_CXX0X   | --std=c++0x  |
 
+これを上から順に検査して、最初に受け入れられたオプションが
+変数 CXXFLAGS_ENABLE_STDCXX に設定され、
+さらに変数 CXXFLAGS の末尾に追記される。
 
 ###   外部パッケージの追加
 
