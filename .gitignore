@@ -2,3 +2,5 @@
 /.hg/
 /InitAutoMake.m4
 
+Makefile.in
+
