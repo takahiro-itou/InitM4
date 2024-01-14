@@ -5,3 +5,5 @@ syntax: regexp
 ^\.git
 ^\InitAutoMake.m4$
 
+Makefile\.in$
+
