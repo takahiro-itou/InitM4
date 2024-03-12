@@ -2,8 +2,8 @@
 syntax: glob
 
 syntax: regexp
-^.git
-^InitAutoMake.m4$
+^\.git
+^InitAutoMake\.m4$
 
 Makefile\.in$
 
