@@ -23,8 +23,8 @@ saved_CXXFLAGS=${CXXFLAGS}
 [CXXFLAGS=']$3[']
 AC_COMPILE_IFELSE(
     [AC_LANG_PROGRAM(
-        [[;]],
-        [[;]]
+      [[;]],
+      [[;]]
     )],
     [[myac_cf_]m4_bpatsubst([$2],-,_)[_enabled='TRUE']],
     [[myac_cf_]m4_bpatsubst([$2],-,_)[_enabled='FALSE']])
