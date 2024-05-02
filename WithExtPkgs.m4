@@ -24,7 +24,7 @@ dnl             その結果が TRUE/FALSE で記録される。
 dnl
 AC_DEFUN([MYAC_WITH_EXT_PKG],[
 AC_ARG_WITH([$2],
-    AC_HELP_STRING([--with-]$2[=PATH], $3),
+    AS_HELP_STRING([--with-]$2[=PATH], $3),
     [[myac_with_]m4_bpatsubst([$2],-,_)[_val=${withval}] ],
     [[myac_with_]m4_bpatsubst([$2],-,_)[_val=']$4[']]dnl
 )dnl
