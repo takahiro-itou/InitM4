@@ -1,12 +1,14 @@
 
 AC_MSG_CHECKING([Compiler Accepts constexpr])
-AC_TRY_COMPILE(
-   [],
-   [constexpr  int  a = 0;
-    return ( a );
-   ],
-   [CONFIG_CHECK_CXX_CONSTEXPR_ENABLED=1],
-   [CONFIG_CHECK_CXX_CONSTEXPR_ENABLED=0]
+AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM(
+      [[]],
+      [[constexpr  int  a = 0;
+        return ( a );
+      ]]
+    )],
+    [CONFIG_CHECK_CXX_CONSTEXPR_ENABLED=1],
+    [CONFIG_CHECK_CXX_CONSTEXPR_ENABLED=0]
 )
 AC_MSG_RESULT(${CONFIG_CHECK_CXX_CONSTEXPR_ENABLED})
 AC_SUBST(CONFIG_CHECK_CXX_CONSTEXPR_ENABLED)

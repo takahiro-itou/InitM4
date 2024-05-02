@@ -21,9 +21,11 @@ saved_CFLAGS=${CFLAGS}
 saved_CXXFLAGS=${CXXFLAGS}
 [CFLAGS=']$3[']
 [CXXFLAGS=']$3[']
-AC_TRY_COMPILE(
-    [;],
-    [;],
+AC_COMPILE_IFELSE(
+    [AC_LANG_PROGRAM(
+      [[;]],
+      [[;]]
+    )],
     [[myac_cf_]m4_bpatsubst([$2],-,_)[_enabled='TRUE']],
     [[myac_cf_]m4_bpatsubst([$2],-,_)[_enabled='FALSE']])
 [if test "x${myac_cf_]m4_bpatsubst([$2],-,_)[_enabled}y" = "xTRUEy" ; then]
@@ -61,8 +63,10 @@ AC_DEFUN([MYAC_CHECK_EXTRA_LINKER_OPTION],
 saved_LDFLAGS=${LDFLAGS}
 [LDFLAGS=']$3[']
 AC_TRY_LINK(
-    [;],
-    [;],
+    [AC_LANG_PROGRAM(
+        [[;]],
+        [[;]]
+    )],
     [[myac_lf_]m4_bpatsubst([$2],-,_)[_enabled='TRUE']],
     [[myac_lf_]m4_bpatsubst([$2],-,_)[_enabled='FALSE']])
 [if test "x${myac_lf_]m4_bpatsubst([$2],-,_)[_enabled}y" = "xTRUEy" ; then]
