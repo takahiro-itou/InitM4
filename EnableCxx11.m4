@@ -38,4 +38,3 @@ AC_MSG_CHECKING([Compiler Accepts c++11])
 [else]
     AC_MSG_RESULT([NO])
 [fi]
-
