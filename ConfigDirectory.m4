@@ -1,4 +1,4 @@
-dnl----------------------------------------------------------------
+dnl ----------------------------------------------------------------
 dnl
 dnl   関数：MYAC_CUSTOMIZE_LIBRARY_DIR
 dnl
@@ -20,7 +20,7 @@ LIBTOP_DIR_NAME=[$1]
 AC_SUBST(LIBTOP_DIR_NAME)
 ])dnl   End of AC_DEFUN(MYAC_CUSTOMIZE_LIBRARY_DIR)
 dnl
-dnl----------------------------------------------------------------
+dnl ----------------------------------------------------------------
 dnl
 dnl   関数：MYAC_CUSTOMIZE_BINARY_DIR
 dnl
@@ -40,7 +40,7 @@ BINTOP_DIR_NAME=[$1]
 AC_SUBST(BINTOP_DIR_NAME)
 ])dnl   End of AC_DEFUN(MYAC_CUSTOMIZE_BINARY_DIR)
 dnl
-dnl----------------------------------------------------------------
+dnl ----------------------------------------------------------------
 dnl
 dnl   関数：MYAC_CUSTOMIZE_INCLUDE_DIR
 dnl
@@ -76,4 +76,3 @@ dnl    コンフィグヘッダを出力。
 AC_CONFIG_HEADERS([$1/.$2.$4:$1/$2/$3/$4.in])
 ])dnl   End of AC_DEFUN(MYAC_CUSTOMIZE_INCLUDE_DIR)
 dnl
-
