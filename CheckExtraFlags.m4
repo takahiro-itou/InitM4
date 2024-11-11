@@ -1,4 +1,4 @@
-dnl----------------------------------------------------------------
+dnl ----------------------------------------------------------------
 dnl
 dnl   関数：MYAC_CHECK_EXTRA_COMPILER_OPTION
 dnl
@@ -38,7 +38,7 @@ AC_COMPILE_IFELSE(
 [CXXFLAGS="${saved_CXXFLAGS}"]
 ])dnl   End of AC_DEFUN(MYAC_CHECK_EXTRA_COMPILER_OPTION)
 dnl
-dnl----------------------------------------------------------------
+dnl ----------------------------------------------------------------
 dnl
 dnl   関数：MYAC_CHECK_EXTRA_LINKER_OPTION
 dnl
@@ -78,4 +78,3 @@ AC_TRY_LINK(
 [LDFLAGS="${saved_LDFLAGS}"]
 ])dnl   End of AC_DEFUN(MYAC_CHECK_EXTRA_LINKER_OPTION)
 dnl
-
