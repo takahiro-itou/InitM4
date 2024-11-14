@@ -16,9 +16,10 @@ AC_DEFUN([MYAC_CHECK_DEFAULT_DECLARATION],[dnl
 AC_MSG_CHECKING([Compiler Accepts ]$3)
 AC_COMPILE_IFELSE(
    [AC_LANG_PROGRAM(
-  [[class Test { public:]
-     $2
-  [};]], [[;]]
+      [[class Test { public:]
+         $2
+      [};]],
+      [[;]]
    )],
   [[CONFIG_CHECK_CXX_]$1[_ENABLED=1]],
   [[CONFIG_CHECK_CXX_]$1[_ENABLED=0]]
@@ -81,4 +82,3 @@ MYAC_CHECK_DEFAULT_DECLARATION(
   [MOVEOPEQ_DELETE],
   [ Test & operator = (Test &&) = delete; ],
   [Move Operator Eq. Delete])
-
