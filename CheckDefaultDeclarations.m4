@@ -14,10 +14,12 @@ dnl             検査結果が 0 or 1 で記録される。
 dnl
 AC_DEFUN([MYAC_CHECK_DEFAULT_DECLARATION],[dnl
 AC_MSG_CHECKING([Compiler Accepts ]$3)
-AC_TRY_COMPILE(
-  [class Test { public:]
+AC_COMPILE_IFELSE(
+   [AC_LANG_PROGRAM(
+  [[class Test { public:]
      $2
-  [};], [;],
+  [};]], [[;]]
+   )],
   [[CONFIG_CHECK_CXX_]$1[_ENABLED=1]],
   [[CONFIG_CHECK_CXX_]$1[_ENABLED=0]]
 )
