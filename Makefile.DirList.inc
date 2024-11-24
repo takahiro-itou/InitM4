@@ -23,6 +23,6 @@ libtop_binary_dir       =  ${PROJECT_BINARY_DIR}/${libtop_dir_name}
 incpkg_source_dir       =  ${inctop_source_dir}/${incpkg_dir_name}
 incpkg_binary_dir       =  ${inctop_binary_dir}/${incpkg_dir_name}
 
-inclib_source_dir       =  ${incpkg_source_dir}/${MODULE_DIR_NAME}
-inclib_binary_dir       =  ${incpkg_binary_dir}/${MODULE_DIR_NAME}
+inclib_source_dir       =  ${incpkg_source_dir}/${module_dir_name}
+inclib_binary_dir       =  ${incpkg_binary_dir}/${module_dir_name}
 

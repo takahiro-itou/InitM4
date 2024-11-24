@@ -6,8 +6,8 @@
 package_includedir      =  ${includedir}/${incpkg_dir_name}
 package_libdir          =  ${libdir}
 
-module_includedir       =  ${package_includedir}/${MODULE_DIR_NAME}
-module_libdir           =  ${package_libdir}/${MODULE_DIR_NAME}
+module_includedir       =  ${package_includedir}/${module_dir_name}
+module_libdir           =  ${package_libdir}/${module_dir_name}
 
 module_include_HEADERS  =  ${INCLIB_HEADER_FILES}
 module_lib_HEADERS      =  ${LIBRARY_INSTALL_SRCFILES}
