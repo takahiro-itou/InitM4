@@ -3,7 +3,7 @@
 ##    List of Installs.
 ##
 
-package_includedir      =  ${includedir}/${INCPKG_DIR_NAME}
+package_includedir      =  ${includedir}/${incpkg_dir_name}
 package_libdir          =  ${libdir}
 
 module_includedir       =  ${package_includedir}/${MODULE_DIR_NAME}
