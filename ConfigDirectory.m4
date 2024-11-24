@@ -10,14 +10,14 @@ dnl         ライブラリ・トップ・ディレクトリの下に、
 dnl         各モジュール毎のディレクトリが配置される。
 dnl         また、変数 LIBTOP_DIR_NAMME が設定される。
 dnl   効果：以下の変数が設定される：
-dnl     -   LIBTOP_DIR_NAME
+dnl     -   libtop_dir_name
 dnl
 AC_DEFUN([MYAC_CUSTOMIZE_LIBRARY_DIR],[
 dnl    インストール先を変更。
 [libdir='${exec_prefix}/][$1][']
 dnl    変数定義。
-LIBTOP_DIR_NAME=[$1]
-AC_SUBST(LIBTOP_DIR_NAME)
+libtop_dir_name=[$1]
+AC_SUBST(libtop_dir_name)
 ])dnl   End of AC_DEFUN(MYAC_CUSTOMIZE_LIBRARY_DIR)
 dnl
 dnl ----------------------------------------------------------------
@@ -61,16 +61,16 @@ dnl         モジュール [$3] 以下の [$4][.in]  を使う。
 dnl         出力はインクルード・トップ・ディレクトリに、
 dnl         ファイル名 [.][$2][.][$4] で出力する。
 dnl   効果：以下の変数が設定される：
-dnl     -   INCTOP_DIR_NAME
+dnl     -   inctop_dir_name
 dnl     -   INCPKG_DIR_NAME
 dnl
 AC_DEFUN([MYAC_CUSTOMIZE_INCLUDE_DIR],[
 dnl    インストール先を変更。
 [includedir='${prefix}/][$1][']
 dnl    変数定義。
-INCTOP_DIR_NAME=[$1]
+inctop_dir_name=[$1]
 INCPKG_DIR_NAME=[$2]
-AC_SUBST(INCTOP_DIR_NAME)
+AC_SUBST(inctop_dir_name)
 AC_SUBST(INCPKG_DIR_NAME)
 dnl    コンフィグヘッダを出力。
 AC_CONFIG_HEADERS([$1/.$2.$4:$1/$2/$3/$4.in])
