@@ -15,7 +15,7 @@ module_lib_LTLIBRARIES  =  ${SHARED_LIBRARIES_LIST}
 module_lib_LIBRARIES    =  ${STATIC_LIBRARIES_LIST}
 
 dist_noinst_DATA        =  ${dist_noinst_data_files}
-dist_noinst_HEADERS     =  ${DIST_NOINST_HEADER_FILES}
+dist_noinst_HEADERS     =  ${dist_noinst_header_files}
 
 ##
 ##    List of (No Dist) Installs.
