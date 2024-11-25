@@ -14,7 +14,7 @@ module_lib_HEADERS      =  ${LIBRARY_INSTALL_SRCFILES}
 module_lib_LTLIBRARIES  =  ${SHARED_LIBRARIES_LIST}
 module_lib_LIBRARIES    =  ${STATIC_LIBRARIES_LIST}
 
-dist_noinst_DATA        =  ${DIST_NOINST_DATA_FILES}
+dist_noinst_DATA        =  ${dist_noinst_data_files}
 dist_noinst_HEADERS     =  ${DIST_NOINST_HEADER_FILES}
 
 ##
