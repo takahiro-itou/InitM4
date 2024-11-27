@@ -4,7 +4,7 @@
 ##    List of Source and Header Files.
 ##
 
-LIBRARY_SOURCE_FILES        =
+library_source_files        =
 LIBRARY_INSTANTIATIONS      =
 LIBRARY_INLINE_FILES        =
 
