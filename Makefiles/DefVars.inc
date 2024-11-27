@@ -12,12 +12,10 @@ dist_noinst_data_files      =  CMakeLists.txt
 dist_noinst_header_files    =
 
 inclib_header_files         =
-
 INCLIB_NODIST_HEADER_FILES  =
 
-LIBRARY_INSTALL_SRCFILES    =
-
-LIBRARY_COMPILE_SRCFILES    =
+library_install_srcfiles    =
+library_compile_srcfiles    =
 
 
 ##################################################################
