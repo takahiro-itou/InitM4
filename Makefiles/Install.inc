@@ -21,5 +21,5 @@ dist_noinst_HEADERS     =  ${dist_noinst_header_files}
 ##    List of (No Dist) Installs.
 ##
 
-nodist_module_include_HEADERS   =  ${INCLIB_NODIST_HEADER_FILES}
+nodist_module_include_HEADERS   =  ${inclib_nodist_header_files}
 
