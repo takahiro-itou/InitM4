@@ -9,7 +9,7 @@ package_libdir          =  ${libdir}
 module_includedir       =  ${package_includedir}/${module_dir_name}
 module_libdir           =  ${package_libdir}/${module_dir_name}
 
-module_include_HEADERS  =  ${INCLIB_HEADER_FILES}
+module_include_HEADERS  =  ${inclib_header_files}
 module_lib_HEADERS      =  ${LIBRARY_INSTALL_SRCFILES}
 module_lib_LTLIBRARIES  =  ${SHARED_LIBRARIES_LIST}
 module_lib_LIBRARIES    =  ${STATIC_LIBRARIES_LIST}
