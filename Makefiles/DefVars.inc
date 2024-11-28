@@ -6,7 +6,7 @@
 
 library_source_files        =
 library_instantiations      =
-LIBRARY_INLINE_FILES        =
+library_inline_files        =
 
 dist_noinst_data_files      =  CMakeLists.txt
 dist_noinst_header_files    =
