@@ -3,8 +3,6 @@
 ##    List of Directories.
 ##
 
-SUBDIRS                 =  .  Checks  Makefiles
-
 ##
 ##    List of Installs.
 ##
