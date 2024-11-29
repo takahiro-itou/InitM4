@@ -30,14 +30,14 @@ dnl     -  $1   バイナリ・トップ・ディレクトリ名。
 dnl   機能：バイナリのインストール先を設定する。
 dnl         また、変数 BINTOP_DIR_NAMME が設定される。
 dnl   効果：以下の変数が設定される：
-dnl     -   BINTOP_DIR_NAME
+dnl     -   bintop_dir_name
 dnl
 AC_DEFUN([MYAC_CUSTOMIZE_BINARY_DIR],[
 dnl    インストール先を変更。
 [bindir='${exec_prefix}/][$1][']
 dnl    変数定義。
-BINTOP_DIR_NAME=[$1]
-AC_SUBST(BINTOP_DIR_NAME)
+bintop_dir_name=[$1]
+AC_SUBST(bintop_dir_name)
 ])dnl   End of AC_DEFUN(MYAC_CUSTOMIZE_BINARY_DIR)
 dnl
 dnl ----------------------------------------------------------------
