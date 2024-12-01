@@ -20,9 +20,9 @@ git submodule add https://gitlab.com/takahiro-itou/InitM4.git [path_for_m4]
 ```
 m4_include([path_for_m4/ConfigDirectory.m4])
 
-MYAC_CUSTOMIZE_LIBRARY_DIR([lib])
-MYAC_CUSTOMIZE_BINARY_DIR([bin])
-MYAC_CUSTOMIZE_INCLUDE_DIR(
+myac_customize_library_dir([lib])
+myac_customize_binary_dir([bin])
+myac_customize_include_dir(
     [include], [sample], [.config], [config.h])
 ```
 
