@@ -8,5 +8,6 @@
 ##
 
 dist_noinst_DATA    =  \
+    DefVars.inc         \
     DirList.inc         \
     Install.inc
