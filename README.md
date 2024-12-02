@@ -52,9 +52,9 @@ m4_include([path_for_m4/CheckOverride.m4])
 
 | 検査順序 |         フラグ名         |   検査対象   |
 |---------:|:-------------------------|:-------------|
-|       1  | COMPILER_ACCEPTS_GNUXX14 | --std=gnu+14 |
+|       1  | compiler_accepts_gnuxx14 | --std=gnu+14 |
 |       2  | COMPILER_ACCEPTS_GNUXX11 | --std=gnu+11 |
-|       3  | COMPILER_ACCEPTS_CXX11   | --std=c++11  |
+|       3  | compiler_accepts_cxx11   | --std=c++11  |
 |       4  | COMPILER_ACCEPTS_CXX0X   | --std=c++0x  |
 
 これを上から順に検査して、最初に受け入れられたオプションが
