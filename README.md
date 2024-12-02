@@ -32,21 +32,20 @@ myac_customize_include_dir(
 - 次に検査したい機能に合わせて *.m4 をインクルードする
 
 ```
-m4_include([path_for_m4/CheckExtraFlags.m4])
+m4_include([path_for_m4/Checks/CheckExtraFlags.m4])
+m4_include([path_for_m4/Checks/EnableCxx11.m4])
 
-m4_include([path_for_m4/EnableCxx11.m4])
-
-m4_include([path_for_m4/CheckConstExpr.m4])
-m4_include([path_for_m4/CheckNullPtr.m4])
-m4_include([path_for_m4/CheckOverride.m4])
+m4_include([path_for_m4/Checks/ConstExpr.m4])
+m4_include([path_for_m4/Checks/NullPtr.m4])
+m4_include([path_for_m4/Checks/Override.m4])
 ```
 
-|     ファイル名     |          設定されるフラグ          |  検査対象  |
-|:-------------------|:-----------------------------------|:-----------|
-| EnableCxx11.m4     | CXXFLAGS_ENABLE_STDCXX, CXXFLAGS   | 下記参照   |
-| CheckConstExpr.m4  | CONFIG_CHECK_CXX_CONSTEXPR_ENABLED | constexpr  |
-| CheckNullPtr.m4    | CONFIG_CHECK_CXX_NULLPTR_ENABLED   | nullptr    |
-| CheckOverride.m4   | CONFIG_CHECK_CXX_OVERRIDE_ENABLED  | override   |
+|       ファイル名       |          設定されるフラグ          |  検査対象  |
+|:-----------------------|:-----------------------------------|:-----------|
+| EnableCxx11.m4         | CXXFLAGS_ENABLE_STDCXX, CXXFLAGS   | 下記参照   |
+| ConstExpr.m4           | CONFIG_CHECK_CXX_CONSTEXPR_ENABLED | constexpr  |
+| NullPtr.m4             | CONFIG_CHECK_CXX_NULLPTR_ENABLED   | nullptr    |
+| Override.m4            | CONFIG_CHECK_CXX_OVERRIDE_ENABLED  | override   |
 
 - EnableCxx11.m4 の判定結果
 
