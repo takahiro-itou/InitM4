@@ -52,9 +52,9 @@ m4_include([path_for_m4/Checks/Override.m4])
 | 検査順序 |         フラグ名         |   検査対象   |
 |---------:|:-------------------------|:-------------|
 |       1  | compiler_accepts_gnuxx14 | --std=gnu+14 |
-|       2  | COMPILER_ACCEPTS_GNUXX11 | --std=gnu+11 |
+|       2  | compiler_accepts_gnuxx11 | --std=gnu+11 |
 |       3  | compiler_accepts_cxx11   | --std=c++11  |
-|       4  | COMPILER_ACCEPTS_CXX0X   | --std=c++0x  |
+|       4  | compiler_accepts_cxx0x   | --std=c++0x  |
 
 これを上から順に検査して、最初に受け入れられたオプションが
 変数 CXXFLAGS_ENABLE_STDCXX に設定され、

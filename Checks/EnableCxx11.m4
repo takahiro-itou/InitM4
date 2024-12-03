@@ -8,13 +8,13 @@ MYAC_CHECK_EXTRA_COMPILER_OPTION(
     [compiler_accepts_gnuxx14],
     [gnuplusplus14],  [-std=gnu++14])
 MYAC_CHECK_EXTRA_COMPILER_OPTION(
-    [COMPILER_ACCEPTS_GNUXX11],
+    [compiler_accepts_gnuxx11],
     [gnuplusplus11],  [-std=gnu++11])
 MYAC_CHECK_EXTRA_COMPILER_OPTION(
     [compiler_accepts_cxx11],
     [cplusplus11],  [-std=c++11])
 MYAC_CHECK_EXTRA_COMPILER_OPTION(
-    [COMPILER_ACCEPTS_CXX0X],
+    [compiler_accepts_cxx0x],
     [cplusplus0x],  [-std=c++0x])
 AC_MSG_CHECKING([Compiler Accepts c++11])
 [if test "x${myac_cf_gnuplusplus14_enabled}y" = "xTRUEy" ; then]
@@ -22,13 +22,13 @@ AC_MSG_CHECKING([Compiler Accepts c++11])
     [CXXFLAGS_ENABLE_STDCXX="${compiler_accepts_gnuxx14}"]
 [elif test "x${myac_cf_gnuplusplus11_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
-    [CXXFLAGS_ENABLE_STDCXX="${COMPILER_ACCEPTS_GNUXX11}"]
+    [CXXFLAGS_ENABLE_STDCXX="${compiler_accepts_gnuxx11}"]
 [elif test "x${myac_cf_cplusplus11_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
     [CXXFLAGS_ENABLE_STDCXX="${compiler_accepts_cxx11}"]
 [elif test "x${myac_cf_cplusplus0x_enabled}y" = "xTRUEy" ; then]
     [myac_cf_stdcxx_enabled=TRUE]
-    [CXXFLAGS_ENABLE_STDCXX="${COMPILER_ACCEPTS_CXX0X}"]
+    [CXXFLAGS_ENABLE_STDCXX="${compiler_accepts_cxx0x}"]
 [else]
     [myac_cf_stdcxx_enabled=FALSE]
 [fi]
