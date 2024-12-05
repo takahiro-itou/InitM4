@@ -1,6 +1,6 @@
 dnl ----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_CHECK_EXTRA_COMPILER_OPTION
+dnl   関数：myac_check_extra_compiler_option
 dnl
 dnl   概要：コンパイラオプションが利用可能か検査する。
 dnl   引数：
@@ -15,7 +15,7 @@ dnl             そのオプションが末尾に追加される。
 dnl     -   myac_cf_$2_enabled
 dnl             検査結果が TRUE/FALSE で記録される。
 dnl
-AC_DEFUN([MYAC_CHECK_EXTRA_COMPILER_OPTION],
+AC_DEFUN([myac_check_extra_compiler_option],
 [AC_MSG_CHECKING([for Compiler Option ]$3)
 saved_CFLAGS=${CFLAGS}
 saved_CXXFLAGS=${CXXFLAGS}
@@ -36,7 +36,7 @@ AC_COMPILE_IFELSE(
 [fi]
 [CFLAGS="${saved_CFLAGS}"]
 [CXXFLAGS="${saved_CXXFLAGS}"]
-])dnl   End of AC_DEFUN(MYAC_CHECK_EXTRA_COMPILER_OPTION)
+])dnl   End of AC_DEFUN(myac_check_extra_compiler_option)
 dnl
 dnl ----------------------------------------------------------------
 dnl

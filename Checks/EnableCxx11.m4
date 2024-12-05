@@ -4,16 +4,16 @@ dnl
 ##
 ##  Check -std=c++11 Compiler Option.
 ##
-MYAC_CHECK_EXTRA_COMPILER_OPTION(
+myac_check_extra_compiler_option(
     [compiler_accepts_gnuxx14],
     [gnuplusplus14],  [-std=gnu++14])
-MYAC_CHECK_EXTRA_COMPILER_OPTION(
+myac_check_extra_compiler_option(
     [compiler_accepts_gnuxx11],
     [gnuplusplus11],  [-std=gnu++11])
-MYAC_CHECK_EXTRA_COMPILER_OPTION(
+myac_check_extra_compiler_option(
     [compiler_accepts_cxx11],
     [cplusplus11],  [-std=c++11])
-MYAC_CHECK_EXTRA_COMPILER_OPTION(
+myac_check_extra_compiler_option(
     [compiler_accepts_cxx0x],
     [cplusplus0x],  [-std=c++0x])
 AC_MSG_CHECKING([Compiler Accepts c++11])
