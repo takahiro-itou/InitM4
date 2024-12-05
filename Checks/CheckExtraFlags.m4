@@ -40,7 +40,7 @@ AC_COMPILE_IFELSE(
 dnl
 dnl ----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_CHECK_EXTRA_LINKER_OPTION
+dnl   関数：myac_check_extra_linker_option
 dnl
 dnl   概要：リンカオプションが利用可能か検査する。
 dnl   引数：
@@ -58,7 +58,7 @@ dnl
 dnl
 dnl   Check Extra Link Options.
 dnl
-AC_DEFUN([MYAC_CHECK_EXTRA_LINKER_OPTION],
+AC_DEFUN([myac_check_extra_linker_option],
 [AC_MSG_CHECKING([for Linker Option ]$3)
 saved_LDFLAGS=${LDFLAGS}
 [LDFLAGS=']$3[']
@@ -76,5 +76,5 @@ AC_TRY_LINK(
     AC_MSG_RESULT([Reject])
 [fi]
 [LDFLAGS="${saved_LDFLAGS}"]
-])dnl   End of AC_DEFUN(MYAC_CHECK_EXTRA_LINKER_OPTION)
+])dnl   End of AC_DEFUN(myac_check_extra_linker_option)
 dnl
