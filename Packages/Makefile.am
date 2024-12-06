@@ -8,7 +8,6 @@
 ##
 
 dist_noinst_DATA    =  \
-    DefVars.inc                 \
-    DirList.inc                 \
-    Install.inc                 \
+    CppUnit.m4                  \
+    WithExtPkgs.m4              \
     ${extra_noinst_data_files}
