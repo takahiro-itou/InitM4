@@ -3,7 +3,8 @@
 ##    List of Directories.
 ##
 
-SUBDIRS                 =  .  Checks  Makefiles
+SUBDIRS         =  .  Checks  Makefiles  Packages
+DIST_SUBDIRS    =  $(SUBDIRS)
 
 ##
 ##    List of Installs.
