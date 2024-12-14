@@ -110,10 +110,10 @@ myac_set_ext_pkg_options(
 | [name]_libdir          |
 | [name]_incdir          |
 | [name]_bindir          |
-| [name]_CPPFLAGS        |
+| [name]_cppflags        |
 | [name]_CFLAGS          |
 | [name]_CXXFLAGS        |
-| [name]_LDFLAGS         |
+| [name]_ldflags         |
 
 例えば上記の CppUnit.m4 では
 
@@ -139,19 +139,19 @@ myac_set_ext_pkg_options(
 | cppunit_libdir         | 空文字列 ("") | 空文字列 ("") | path/lib      |
 | cppunit_incdir         | 空文字列 ("") | 空文字列 ("") | path/include  |
 | cppunit_bindir         | 空文字列 ("") | 空文字列 ("") | path/bin      |
-| cppunit_CPPFLAGS   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
+| cppunit_cppflags   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
 |                    |                  |                  | -I${cppunit_incdir} |
 | cppunit_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | cppunit_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
-| cppunit_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_libdir} |
+| cppunit_ldflags        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_libdir} |
 
 - 判定した結果は以下のように Makefiile.am で使うことができる
 
 ```
-test_cppflags_xunit         =  @cppunit_CPPFLAGS@
+test_cppflags_xunit         =  @cppunit_cppflags@
 test_cflags_xunit           =  @cppunit_CFLAGS@
 test_cxxflags_xunit         =  @cppunit_CXXFLAGS@
-test_ldflags_xunit          =  @cppunit_LDFLAGS@
+test_ldflags_xunit          =  @cppunit_ldflags@
 
 if  AMCNF_CPPUNIT_ENABLED
 test_link_ldadd_xunit       =  @cppunit_link_ldadd@

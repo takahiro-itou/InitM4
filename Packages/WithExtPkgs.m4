@@ -65,12 +65,12 @@ dnl   効果：以下の変数が設定される：
 dnl     -  $1_libdir
 dnl     -  $1_incdir
 dnl     -  $1_bindir
-dnl     -  $1_CPPFLAGS
+dnl     -  $1_cppflags
 dnl         - -I$1_incdir : インクルードパス
 dnl         - -DHAVE_$7=n : 機能が使えるか否かを示すディレクティブ
 dnl     -  $1_CFLAGS
 dnl     -  $1_CXXFLAGS
-dnl     -  $1_LDFLAGS
+dnl     -  $1_ldflags
 dnl
 AC_DEFUN([myac_set_ext_pkg_options],[
 AC_MSG_CHECKING([[for ]$1[ Options]])
@@ -80,30 +80,30 @@ dnl
     $1[_libdir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4["]
     $1[_incdir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5["]
     $1[_bindir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$6["]
-    $1[_CPPFLAGS=-I"${]$1[_incdir}"]
-    $1[_CPPFLAGS+=' -DHAVE_]$7[=1']
+    $1[_cppflags=-I"${]$1[_incdir}"]
+    $1[_cppflags+=' -DHAVE_]$7[=1']
     $1[_CFLAGS='']
     $1[_CXXFLAGS='']
-    $1[_LDFLAGS=-L"${]$1[_libdir}"]
+    $1[_ldflags=-L"${]$1[_libdir}"]
   [else]
     $1[_libdir='']
     $1[_incdir='']
     $1[_bindir='']
-    $1[_CPPFLAGS='']
-    $1[_CPPFLAGS+=' -DHAVE_]$1[=1']
+    $1[_cppflags='']
+    $1[_cppflags+=' -DHAVE_]$1[=1']
     $1[_CFLAGS='']
     $1[_CXXFLAGS='']
-    $1[_LDFLAGS='']
+    $1[_ldflags='']
   [fi]
 [else]
   $1[_libdir='']
   $1[_incdir='']
   $1[_bindir='']
-  $1[_CPPFLAGS='']
-  $1[_CPPFLAGS+=' -DHAVE_]$1[=0']
+  $1[_cppflags='']
+  $1[_cppflags+=' -DHAVE_]$1[=0']
   $1[_CFLAGS='']
   $1[_CXXFLAGS='']
-  $1[_LDFLAGS='']
+  $1[_ldflags='']
 [fi]
 dnl
 AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_val}])
@@ -111,21 +111,21 @@ AC_MSG_CHECKING([[for ]$1[ path]])
 AC_MSG_RESULT([${myac_with_]m4_bpatsubst([$2],-,_)[_path}])
 dnl
 AC_MSG_CHECKING([[for ]$1[ PreProcessor Options]])
-AC_MSG_RESULT([$1[_CPPFLAGS = ${]$1[_CPPFLAGS}]])
+AC_MSG_RESULT([$1[_cppflags = ${]$1[_cppflags}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
 AC_MSG_RESULT([$1[_CFLAGS   = ${]$1[_CFLAGS}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
 AC_MSG_RESULT([$1[_CXXFLAGS = ${]$1[_CXXFLAGS}]])
 dnl
 AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
-AC_MSG_RESULT([$1[_LDFLAGS  = ${]$1[_LDFLAGS}]])
+AC_MSG_RESULT([$1[_ldflags  = ${]$1[_ldflags}]])
 dnl
 AC_SUBST($1[_libdir])
 AC_SUBST($1[_incdir])
 AC_SUBST($1[_bindir])
-AC_SUBST($1[_CPPFLAGS])
+AC_SUBST($1[_cppflags])
 AC_SUBST($1[_CFLAGS])
 AC_SUBST($1[_CXXFLAGS])
-AC_SUBST($1[_LDFLAGS])
+AC_SUBST($1[_ldflags])
 ])dnl   End of AC_DEFUN(myac_set_ext_pkg_options)
 dnl
