@@ -62,11 +62,11 @@ dnl             普通は引数 $3 と同じ値でよい。
 dnl   機能：ユーザーが指定した --with-XXX の内容に基づいて
 dnl         以下の効果で示される変数の値を設定する。
 dnl   効果：以下の変数が設定される：
-dnl     -  $1_LIBDIR
-dnl     -  $1_INCDIR
-dnl     -  $1_BINDIR
+dnl     -  $1_libdir
+dnl     -  $1_incdir
+dnl     -  $1_bindir
 dnl     -  $1_CPPFLAGS
-dnl         - -I$1_INCDIR : インクルードパス
+dnl         - -I$1_incdir : インクルードパス
 dnl         - -DHAVE_$7=n : 機能が使えるか否かを示すディレクティブ
 dnl     -  $1_CFLAGS
 dnl     -  $1_CXXFLAGS
@@ -77,18 +77,18 @@ AC_MSG_CHECKING([[for ]$1[ Options]])
 dnl
 [if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy" ; then]
   [if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_path}y" != "xy" ; then]
-    $1[_LIBDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4["]
-    $1[_INCDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5["]
-    $1[_BINDIR="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$6["]
-    $1[_CPPFLAGS=-I"${]$1[_INCDIR}"]
+    $1[_libdir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$4["]
+    $1[_incdir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$5["]
+    $1[_bindir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$6["]
+    $1[_CPPFLAGS=-I"${]$1[_incdir}"]
     $1[_CPPFLAGS+=' -DHAVE_]$7[=1']
     $1[_CFLAGS='']
     $1[_CXXFLAGS='']
-    $1[_LDFLAGS=-L"${]$1[_LIBDIR}"]
+    $1[_LDFLAGS=-L"${]$1[_libdir}"]
   [else]
-    $1[_LIBDIR='']
-    $1[_INCDIR='']
-    $1[_BINDIR='']
+    $1[_libdir='']
+    $1[_incdir='']
+    $1[_bindir='']
     $1[_CPPFLAGS='']
     $1[_CPPFLAGS+=' -DHAVE_]$1[=1']
     $1[_CFLAGS='']
@@ -96,9 +96,9 @@ dnl
     $1[_LDFLAGS='']
   [fi]
 [else]
-  $1[_LIBDIR='']
-  $1[_INCDIR='']
-  $1[_BINDIR='']
+  $1[_libdir='']
+  $1[_incdir='']
+  $1[_bindir='']
   $1[_CPPFLAGS='']
   $1[_CPPFLAGS+=' -DHAVE_]$1[=0']
   $1[_CFLAGS='']
@@ -120,9 +120,9 @@ dnl
 AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
 AC_MSG_RESULT([$1[_LDFLAGS  = ${]$1[_LDFLAGS}]])
 dnl
-AC_SUBST($1[_LIBDIR])
-AC_SUBST($1[_INCDIR])
-AC_SUBST($1[_BINDIR])
+AC_SUBST($1[_libdir])
+AC_SUBST($1[_incdir])
+AC_SUBST($1[_bindir])
 AC_SUBST($1[_CPPFLAGS])
 AC_SUBST($1[_CFLAGS])
 AC_SUBST($1[_CXXFLAGS])

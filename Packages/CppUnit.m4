@@ -8,8 +8,8 @@ myac_set_ext_pkg_options(
     [include], [bin], [CPPUNIT]dnl
 )
 
-if test "x${cppunit_LIBDIR}y" != "xy" ; then
-    cppunit_link_ldadd="${cppunit_LIBDIR}/libcppunit.a"
+if test "x${cppunit_libdir}y" != "xy" ; then
+    cppunit_link_ldadd="${cppunit_libdir}/libcppunit.a"
 else
     cppunit_link_ldadd='-lcppunit'
 fi

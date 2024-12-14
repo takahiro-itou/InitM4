@@ -107,9 +107,9 @@ myac_set_ext_pkg_options(
 |         変数名         |
 |:-----------------------|
 | AMCNF_[NAME]_ENABLED   |
-| [name]_LIBDIR          |
-| [name]_INCDIR          |
-| [name]_BINDIR          |
+| [name]_libdir          |
+| [name]_incdir          |
+| [name]_bindir          |
 | [name]_CPPFLAGS        |
 | [name]_CFLAGS          |
 | [name]_CXXFLAGS        |
@@ -131,19 +131,19 @@ myac_set_ext_pkg_options(
 となっており、ユーザーが　--with-cppunit オプションを指定すると
 以下のように設定される
 
-- --with-cppunit=yes の時
+- --with-cppunit=yes/no/path を指定 の時
 
 |         変数名         | =yes | =no | =path |
 |:-----------------------|:--------------|:--------------|:--------------|
 | AMCNF_CPPUNIT_ENABLED  | TRUE          | FALSE         | TRUE          |
-| cppunit_LIBDIR         | 空文字列 ("") | 空文字列 ("") | path/lib      |
-| cppunit_INCDIR         | 空文字列 ("") | 空文字列 ("") | path/include  |
-| cppunit_BINDIR         | 空文字列 ("") | 空文字列 ("") | path/bin      |
+| cppunit_libdir         | 空文字列 ("") | 空文字列 ("") | path/lib      |
+| cppunit_incdir         | 空文字列 ("") | 空文字列 ("") | path/include  |
+| cppunit_bindir         | 空文字列 ("") | 空文字列 ("") | path/bin      |
 | cppunit_CPPFLAGS   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
-|                    |                  |                  | -I${cppunit_INCDIR} |
+|                    |                  |                  | -I${cppunit_incdir} |
 | cppunit_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | cppunit_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
-| cppunit_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_LIBDIR} |
+| cppunit_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_libdir} |
 
 - 判定した結果は以下のように Makefiile.am で使うことができる
 
