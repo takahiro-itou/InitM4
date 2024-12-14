@@ -1,6 +1,6 @@
 dnl ----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_WITH_EXT_PKG
+dnl   関数：myac_with_ext_pkg
 dnl
 dnl   概要：オプション --with-XXX を作成する。
 dnl   引数：
@@ -22,7 +22,7 @@ dnl     -   myac_with_$2_enable
 dnl             ユーザーが指定した内容に従って、
 dnl             その結果が TRUE/FALSE で記録される。
 dnl
-AC_DEFUN([MYAC_WITH_EXT_PKG],[
+AC_DEFUN([myac_with_ext_pkg],[
 AC_ARG_WITH([$2],
     AS_HELP_STRING([--with-]$2[=PATH], $3),
     [[myac_with_]m4_bpatsubst([$2],-,_)[_val=${withval}] ],
@@ -41,7 +41,7 @@ AM_CONDITIONAL(
     [$5],
     [[test  "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy"]]dnl
 )dnl
-])dnl   End of AC_DEFUN(MYAC_WITH_EXT_PKG)
+])dnl   End of AC_DEFUN(myac_with_ext_pkg)
 dnl
 dnl ----------------------------------------------------------------
 dnl

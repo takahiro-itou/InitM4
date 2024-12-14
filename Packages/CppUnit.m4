@@ -1,5 +1,5 @@
 dnl
-MYAC_WITH_EXT_PKG(
+myac_with_ext_pkg(
     [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
     [AMCNF_CPPUNIT_ENABLED],dnl
 )

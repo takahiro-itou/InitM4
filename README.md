@@ -92,7 +92,7 @@ m4_include([path_for_m4/Packages/CppUnit.m4])
 この WithExtPkgs.m4 をインクルードし
 
 ```
-MYAC_WITH_EXT_PKG(
+myac_with_ext_pkg(
     [TITLE],  [name],  [help message],  [default],
     [AMCNF_TITLE_ENABLED],
 )
@@ -117,7 +117,7 @@ MYAC_SET_EXT_PKG_OPTIONS(
 例えば上記の CppUnit.m4 では
 
 ```
-MYAC_WITH_EXT_PKG(
+myac_with_ext_pkg(
     [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
     [AMCNF_CPPUNIT_ENABLED],dnl
 )
