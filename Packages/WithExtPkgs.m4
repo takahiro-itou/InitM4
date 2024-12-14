@@ -45,7 +45,7 @@ AM_CONDITIONAL(
 dnl
 dnl ----------------------------------------------------------------
 dnl
-dnl   関数：MYAC_SET_EXT_PKG_OPTIONS
+dnl   関数：myac_set_ext_pkg_options
 dnl
 dnl   概要：オプション --with-XXX を作成する。
 dnl   引数：
@@ -55,7 +55,7 @@ dnl     -  $3   ライブラリのディレクトリ名
 dnl     -  $4   ヘッダファイルのディレクトリ名
 dnl     -  $5   バイナリのディレクトリ名
 dnl
-AC_DEFUN([MYAC_SET_EXT_PKG_OPTIONS],[
+AC_DEFUN([myac_set_ext_pkg_options],[
 AC_MSG_CHECKING([[for ]$1[ Options]])
 dnl
 [if test "x${myac_with_]m4_bpatsubst([$2],-,_)[_enable}y" = "xTRUEy" ; then]
@@ -110,5 +110,5 @@ AC_SUBST($1[_CPPFLAGS])
 AC_SUBST($1[_CFLAGS])
 AC_SUBST($1[_CXXFLAGS])
 AC_SUBST($1[_LDFLAGS])
-])dnl   End of AC_DEFUN(MYAC_SET_EXT_PKG_OPTIONS)
+])dnl   End of AC_DEFUN(myac_set_ext_pkg_options)
 dnl

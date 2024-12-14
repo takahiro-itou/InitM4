@@ -3,7 +3,7 @@ myac_with_ext_pkg(
     [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
     [AMCNF_CPPUNIT_ENABLED],dnl
 )
-MYAC_SET_EXT_PKG_OPTIONS(
+myac_set_ext_pkg_options(
     [CPPUNIT], [cppunit], [lib], [include], [bin],dnl
 )
 
