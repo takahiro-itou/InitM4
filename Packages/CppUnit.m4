@@ -1,15 +1,15 @@
 dnl
 myac_with_ext_pkg(
-    [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
+    [cppunit],  [cppunit],  [Path to cppunit],  [yes],
     [AMCNF_CPPUNIT_ENABLED],dnl
 )
 myac_set_ext_pkg_options(
-    [CPPUNIT], [cppunit], [lib], [include], [bin],dnl
+    [cppunit], [cppunit], [lib], [include], [bin],dnl
 )
 
-if test "x${CPPUNIT_LIBDIR}y" != "xy" ; then
-    CPPUNIT_LINK_LDADD="${CPPUNIT_LIBDIR}/libcppunit.a"
+if test "x${cppunit_LIBDIR}y" != "xy" ; then
+    cppunit_link_ldadd="${cppunit_LIBDIR}/libcppunit.a"
 else
-    CPPUNIT_LINK_LDADD='-lcppunit'
+    cppunit_link_ldadd='-lcppunit'
 fi
-AC_SUBST([CPPUNIT_LINK_LDADD])
+AC_SUBST([cppunit_link_ldadd])
