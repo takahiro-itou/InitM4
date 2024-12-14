@@ -68,8 +68,8 @@ dnl     -  $1_bindir
 dnl     -  $1_cppflags
 dnl         - -I$1_incdir : インクルードパス
 dnl         - -DHAVE_$7=n : 機能が使えるか否かを示すディレクティブ
-dnl     -  $1_CFLAGS
-dnl     -  $1_CXXFLAGS
+dnl     -  $1_cflags
+dnl     -  $1_cxxflags
 dnl     -  $1_ldflags
 dnl
 AC_DEFUN([myac_set_ext_pkg_options],[
@@ -82,8 +82,8 @@ dnl
     $1[_bindir="${myac_with_]m4_bpatsubst([$2],-,_)[_path}/]$6["]
     $1[_cppflags=-I"${]$1[_incdir}"]
     $1[_cppflags+=' -DHAVE_]$7[=1']
-    $1[_CFLAGS='']
-    $1[_CXXFLAGS='']
+    $1[_cflags='']
+    $1[_cxxflags='']
     $1[_ldflags=-L"${]$1[_libdir}"]
   [else]
     $1[_libdir='']
@@ -91,8 +91,8 @@ dnl
     $1[_bindir='']
     $1[_cppflags='']
     $1[_cppflags+=' -DHAVE_]$1[=1']
-    $1[_CFLAGS='']
-    $1[_CXXFLAGS='']
+    $1[_cflags='']
+    $1[_cxxflags='']
     $1[_ldflags='']
   [fi]
 [else]
@@ -101,8 +101,8 @@ dnl
   $1[_bindir='']
   $1[_cppflags='']
   $1[_cppflags+=' -DHAVE_]$1[=0']
-  $1[_CFLAGS='']
-  $1[_CXXFLAGS='']
+  $1[_cflags='']
+  $1[_cxxflags='']
   $1[_ldflags='']
 [fi]
 dnl
@@ -113,9 +113,9 @@ dnl
 AC_MSG_CHECKING([[for ]$1[ PreProcessor Options]])
 AC_MSG_RESULT([$1[_cppflags = ${]$1[_cppflags}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
-AC_MSG_RESULT([$1[_CFLAGS   = ${]$1[_CFLAGS}]])
+AC_MSG_RESULT([$1[_cflags   = ${]$1[_cflags}]])
 AC_MSG_CHECKING([[for ]$1[ Compiler Options]])
-AC_MSG_RESULT([$1[_CXXFLAGS = ${]$1[_CXXFLAGS}]])
+AC_MSG_RESULT([$1[_cxxflags = ${]$1[_cxxflags}]])
 dnl
 AC_MSG_CHECKING([[for ]$1[ Linker Options  ]])
 AC_MSG_RESULT([$1[_ldflags  = ${]$1[_ldflags}]])
@@ -124,8 +124,8 @@ AC_SUBST($1[_libdir])
 AC_SUBST($1[_incdir])
 AC_SUBST($1[_bindir])
 AC_SUBST($1[_cppflags])
-AC_SUBST($1[_CFLAGS])
-AC_SUBST($1[_CXXFLAGS])
+AC_SUBST($1[_cflags])
+AC_SUBST($1[_cxxflags])
 AC_SUBST($1[_ldflags])
 ])dnl   End of AC_DEFUN(myac_set_ext_pkg_options)
 dnl

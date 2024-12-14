@@ -111,8 +111,8 @@ myac_set_ext_pkg_options(
 | [name]_incdir          |
 | [name]_bindir          |
 | [name]_cppflags        |
-| [name]_CFLAGS          |
-| [name]_CXXFLAGS        |
+| [name]_cflags          |
+| [name]_cxxflags        |
 | [name]_ldflags         |
 
 例えば上記の CppUnit.m4 では
@@ -141,16 +141,16 @@ myac_set_ext_pkg_options(
 | cppunit_bindir         | 空文字列 ("") | 空文字列 ("") | path/bin      |
 | cppunit_cppflags   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
 |                    |                  |                  | -I${cppunit_incdir} |
-| cppunit_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
-| cppunit_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
+| cppunit_cflags         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
+| cppunit_cxxflags       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
 | cppunit_ldflags        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_libdir} |
 
 - 判定した結果は以下のように Makefiile.am で使うことができる
 
 ```
 test_cppflags_xunit         =  @cppunit_cppflags@
-test_cflags_xunit           =  @cppunit_CFLAGS@
-test_cxxflags_xunit         =  @cppunit_CXXFLAGS@
+test_cflags_xunit           =  @cppunit_cflags@
+test_cxxflags_xunit         =  @cppunit_cxxflags@
 test_ldflags_xunit          =  @cppunit_ldflags@
 
 if  AMCNF_CPPUNIT_ENABLED
