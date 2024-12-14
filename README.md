@@ -134,25 +134,25 @@ myac_set_ext_pkg_options(
 |         変数名         | =yes | =no | =path |
 |:-----------------------|:--------------|:--------------|:--------------|
 | AMCNF_CPPUNIT_ENABLED  | TRUE          | FALSE         | TRUE          |
-| CPPUNIT_LIBDIR         | 空文字列 ("") | 空文字列 ("") | path/lib      |
-| CPPUNIT_INCDIR         | 空文字列 ("") | 空文字列 ("") | path/include  |
-| CPPUNIT_BINDIR         | 空文字列 ("") | 空文字列 ("") | path/bin      |
-| CPPUNIT_CPPFLAGS   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
-|                    |                  |                  | -I${CPPUNIT_INCDIR} |
-| CPPUNIT_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
-| CPPUNIT_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
-| CPPUNIT_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${CPPUNIT_LIBDIR} |
+| cppunit_LIBDIR         | 空文字列 ("") | 空文字列 ("") | path/lib      |
+| cppunit_INCDIR         | 空文字列 ("") | 空文字列 ("") | path/include  |
+| cppunit_BINDIR         | 空文字列 ("") | 空文字列 ("") | path/bin      |
+| cppunit_CPPFLAGS   | -DHAVE_CPPUNIT=1 | -DHAVE_CPPUNIT=0 | -DHAVE_CPPUNIT=1    |
+|                    |                  |                  | -I${cppunit_INCDIR} |
+| cppunit_CFLAGS         | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
+| cppunit_CXXFLAGS       | 空文字列 ("") | 空文字列 ("") | 空文字列 ("") |
+| cppunit_LDFLAGS        | 空文字列 ("") | 空文字列 ("") | -L${cppunit_LIBDIR} |
 
 - 判定した結果は以下のように Makefiile.am で使うことができる
 
 ```
-TEST_CPPFLAGS_XUNIT         =  @CPPUNIT_CPPFLAGS@
-TEST_CFLAGS_XUNIT           =  @CPPUNIT_CFLAGS@
-TEST_CXXFLAGS_XUNIT         =  @CPPUNIT_CXXFLAGS@
-TEST_LDFLAGS_XUNIT          =  @CPPUNIT_LDFLAGS@
+TEST_CPPFLAGS_XUNIT         =  @cppunit_CPPFLAGS@
+TEST_CFLAGS_XUNIT           =  @cppunit_CFLAGS@
+TEST_CXXFLAGS_XUNIT         =  @cppunit_CXXFLAGS@
+TEST_LDFLAGS_XUNIT          =  @cppunit_LDFLAGS@
 
 if  AMCNF_CPPUNIT_ENABLED
-TEST_LINK_LDADD_XUNIT       =  @CPPUNIT_LINK_LDADD@
+TEST_LINK_LDADD_XUNIT       =  @cppunit_link_ldadd@
 else
 TEST_LINK_LDADD_XUNIT       =
 endif
