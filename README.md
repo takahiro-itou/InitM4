@@ -93,36 +93,38 @@ m4_include([path_for_m4/Packages/CppUnit.m4])
 
 ```
 myac_with_ext_pkg(
-    [TITLE],  [name],  [help message],  [default],
-    [AMCNF_TITLE_ENABLED],
+    [name],  [optname],  [help message],  [default],
+    [AMCNF_NAME_ENABLED],
 )
 myac_set_ext_pkg_options(
-    [TITLE], [name], [lib], [include], [bin],dnl
+    [name], [name], [CAP_NAME],
+    [lib], [include], [bin], [HAVE_NAME]dnl
 )
 ```
-のように使う。するとユーザーが --with-name オプションを指定すると
+のように使う。するとユーザーが --with-optname オプションを指定すると
 以下の変数が設定される。
 
 |         変数名         |
 |:-----------------------|
-| AMCNF_[TITLE]_ENABLED  |
-| [TITLE]_LIBDIR         |
-| [TITLE]_INCDIR         |
-| [TITLE]_BINDIR         |
-| [TITLE]_CPPFLAGS       |
-| [TITLE]_CFLAGS         |
-| [TITLE]_CXXFLAGS       |
-| [TITLE]_LDFLAGS        |
+| AMCNF_[NAME]_ENABLED   |
+| [name]_LIBDIR          |
+| [name]_INCDIR          |
+| [name]_BINDIR          |
+| [name]_CPPFLAGS        |
+| [name]_CFLAGS          |
+| [name]_CXXFLAGS        |
+| [name]_LDFLAGS         |
 
 例えば上記の CppUnit.m4 では
 
 ```
 myac_with_ext_pkg(
-    [CPPUNIT],  [cppunit],  [Path to cppunit],  [yes],
+    [cppunit],  [cppunit],  [Path to cppunit],  [yes],
     [AMCNF_CPPUNIT_ENABLED],dnl
 )
 myac_set_ext_pkg_options(
-    [CPPUNIT], [cppunit], [lib], [include], [bin],dnl
+    [cppunit], [cppunit], [CPPUNIT],
+    [lib], [include], [bin], [CPPUNIT]dnl
 )
 ```
 
@@ -146,21 +148,21 @@ myac_set_ext_pkg_options(
 - 判定した結果は以下のように Makefiile.am で使うことができる
 
 ```
-TEST_CPPFLAGS_XUNIT         =  @cppunit_CPPFLAGS@
-TEST_CFLAGS_XUNIT           =  @cppunit_CFLAGS@
-TEST_CXXFLAGS_XUNIT         =  @cppunit_CXXFLAGS@
-TEST_LDFLAGS_XUNIT          =  @cppunit_LDFLAGS@
+test_cppflags_xunit         =  @cppunit_CPPFLAGS@
+test_cflags_xunit           =  @cppunit_CFLAGS@
+test_cxxflags_xunit         =  @cppunit_CXXFLAGS@
+test_ldflags_xunit          =  @cppunit_LDFLAGS@
 
 if  AMCNF_CPPUNIT_ENABLED
-TEST_LINK_LDADD_XUNIT       =  @cppunit_link_ldadd@
+test_link_ldadd_xunit       =  @cppunit_link_ldadd@
 else
-TEST_LINK_LDADD_XUNIT       =
+test_link_ldadd_xunit       =
 endif
 
 ...
 
-AM_CFLAGS           =  ${TEST_CFLAGS_XUNIT}
-AM_CXXFLAGS         =  ${TEST_CXXFLAGS_XUNIT}
-AM_LDFLAGS          =  ${TEST_LDFLAGS_XUNIT}
-LDADD               =  ${TEST_LINK_LDADD_XUNIT}
+AM_CFLAGS           =  ${test_cflags_xunit}
+AM_CXXFLAGS         =  ${test_cxxflags_xunit}
+AM_LDFLAGS          =  ${test_ldflags_xunit}
+LDADD               =  ${test_link_ldadd_xunit}
 ```
