@@ -8,7 +8,7 @@ dnl     -  $1   ライブラリ・トップ・ディレクトリ名。
 dnl   機能：ライブラリのインストール先を設定する。
 dnl         ライブラリ・トップ・ディレクトリの下に、
 dnl         各モジュール毎のディレクトリが配置される。
-dnl         また、変数 LIBTOP_DIR_NAMME が設定される。
+dnl         また、変数 libtop_dir_name  が設定される。
 dnl   効果：以下の変数が設定される：
 dnl     -   libtop_dir_name
 dnl
